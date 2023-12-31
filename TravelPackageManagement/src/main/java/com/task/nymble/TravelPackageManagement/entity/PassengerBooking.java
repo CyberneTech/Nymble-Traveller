@@ -1,4 +1,5 @@
 package com.task.nymble.TravelPackageManagement.entity;
 
-public class TravelPackage {
+public class PassengerBooking {
+    
 }
