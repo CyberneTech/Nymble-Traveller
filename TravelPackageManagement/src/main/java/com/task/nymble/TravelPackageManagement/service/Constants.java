@@ -3,6 +3,9 @@ package com.task.nymble.TravelPackageManagement.service;
 public class Constants {
 
     public static final String WALLET_AMOUNT="amount";
+    public static final String ACTIVITY_NAME="activityName";
+    public static final String PASSENGER_NUMBER="passengerNumber";
+    public static final String PACKAGE_ID = "travelPackageId";
 
     public enum MembershipType {
         STANDARD,
