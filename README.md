@@ -3,10 +3,12 @@
 This project is a Spring Boot-based application designed to manage and organize travel packages and related activities. It offers a comprehensive system for handling travel itineraries, including tracking destinations, activities available at each location, bookings, and passenger management. The application serves as a robust platform for travel agencies or related businesses to streamline their operations and offer enhanced services to their clients
 
 ## High-Level Design (HLD)
-[HLD Diagram](images/HLD.png)
+![HLD Diagram](images/HLD.png)
+The system can interact with client side apps through standard HTTP methods. The application controller directs incoming requests to the service layer, where the business logic resides. These services interact with the repository layer to perform CRUD operations on the domain entities corresponding to database tables managed by PostgreSQL. The repository layer abstracts the data persistence mechanisms, facilitating communication between the object-oriented application code and the relational database, which includes complex relationships and joins. 
+
 
 ## UML Class Diagram
-[LLD Diagram](images/LLD.png)
+![LLD Diagram](images/LLD.png)
 
 ### Installation
 
