@@ -45,7 +45,7 @@ Once the application is running, access Swagger UI at
 (to see and test the API endpoints)
 
 ### Testing Endpoints with Postman
- A Postman collection is available to test the API endpoints: {Link to Postman collection}
+ A Postman collection is available to test the API endpoints: [go to file](PostmanCollection/Postman collection - TravelPackageManagement.postman_collection.json)
  <br/>To test the API endpoints:
 *Import the Postman collection and make sure the application is running at `http://localhost:8080.`*
 

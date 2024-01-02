@@ -1,0 +1,543 @@
+{
+	"info": {
+		"_postman_id": "f133e618-7211-4d61-8cc4-c7bcf1db0344",
+		"name": "Postman collection - TravelPackageManagement",
+		"description": "Collection with sample requests for all REST API endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20137026"
+	},
+	"item": [
+		{
+			"name": "passenger_details",
+			"item": [
+				{
+					"name": "createPassenger",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"passengerName\": \"Lancer\",\n    \"walletBalance\": 80,\n    \"membershipType\": \"GOLD\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/passenger/new",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"passenger",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "recharge user wallet",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 250\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/passenger/52/recharge",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"passenger",
+								"52",
+								"recharge"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get details of a given passenger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/passenger/52",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"passenger",
+								"52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPassengerDetails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/passenger",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"passenger"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activityBookingDetails for a passenger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/passenger/53/activityBookingDetails",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"passenger",
+								"53",
+								"activityBookingDetails"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "HTTP requests for endoints exposed by PassengerDetailController\n\nGET \"/api/v1/passenger\" : to getAllPassengerDetails()  \nPOST \"/api/v1/passenger/new\" :to createPassenger()  \nPUT \"/{passengerNumber}/recharge\" : to rechargeWallet()  \nGET \"/{passengerNumber}\" : to getDetails of passenger with id=passengerNumber\n\nGET \"/{passengerNumber}/activityBookingDetails\" : to get booking details of a passenger"
+		},
+		{
+			"name": "destinations",
+			"item": [
+				{
+					"name": "create new destination",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"destinationName\": \"Chennai\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/destination",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"destination"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all destinations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/destination",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"destination"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "HTTP requests for endoints exposed by DestinationController  \n  \npath: \"api/v1/destination\""
+		},
+		{
+			"name": "travelpackage",
+			"item": [
+				{
+					"name": "create new travel package",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"travelPackageName\": \"South African Delight\",\n    \"passengerCapacity\": 20,\n    \"destinations\": [\n        { \"destinationId\": 1 },\n        { \"destinationId\": 2 },\n        { \"destinationId\": 3 }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/package/new",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"package",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit travel package details",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"travelPackageName\": \"Indian Hertiage\",\n    \"passengerCapacity\": 27,\n    \"destinations\": [\n        { \"destinationId\": 4 },\n        { \"destinationId\": 5 },\n        { \"destinationId\": 6 }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/package/2/edit",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"package",
+								"2",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all packages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/package",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"package"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get package for given id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/package/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"package",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get itinerary for a package",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/package/1/itinerary",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"package",
+								"1",
+								"itinerary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get list of passenger enrolled for a package",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/package/1/passengerList",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"package",
+								"1",
+								"passengerList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "book a package for a passenger",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"travelPackageId\": 1,\n    \"passengerNumber\": 53\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/package/bookPackage",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"package",
+								"bookPackage"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "HTTP requests for endoints exposed by TravelPackageController\n\nGET \"/api/v1/package\"\n\nGET \"/api/v1/package/{travelPackageId}\"\n\nPOST\"/api/v1/package/new\"  \nPUT \"/api/v1/package/{travelPackageId}/edit\"\n\nGET \"/api/v1/package/{travelPackageId}/itinerary\"\n\nGET \"/api/v1/package/{travelPackageId}/passengerList\"  \nPOST \"/api/v1/package/bookPackage\""
+		},
+		{
+			"name": "activities",
+			"item": [
+				{
+					"name": "create new activity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"activityName\": \"HelicopterFLip\",\n    \"description\": \"description for helicopter flip\",\n    \"cost\": 100,\n    \"capacity\": 9,\n    \"destination\": {\"destinationId\": 1}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/activity/new",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"activity",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit activity",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"activityName\": \"HelicopterFLip\",\n    \"description\": \"changed description for HelicopterFlip\",\n    \"cost\": 20,\n    \"capacity\": 2,\n    \"destination\": {\"destinationId\": 1}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/activity/HelicopterFLip/edit",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"activity",
+								"HelicopterFLip",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get activity of given name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/activity/HelicopterFLip",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"activity",
+								"HelicopterFLip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get available activities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/activity/availableActivities",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"activity",
+								"availableActivities"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "HTTP requests for endoints exposed by ActivityController\n\nPOST \"/api/v1/activity/new\"  \nPUT \"/api/v1/activity/{activityName}/edit\"  \nGET \"/api/v1/activity/{activityName}\"  \nGET \"/api/v1/activity/availableActivities\""
+		},
+		{
+			"name": "activity_booking",
+			"item": [
+				{
+					"name": "book activity for a passenger",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"activityName\": \"OstrichFarm\",\n    \"passengerNumber\": 52\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/bookActivity/new",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"bookActivity",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list of all activity bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/bookActivity",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"bookActivity"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "HTTP requests for endoints exposed by PassengerDetailController\n\nGET \"api/v1/bookActivity\"  \nPOST \"api/v1/bookActivity/new\""
+		}
+	]
+}
