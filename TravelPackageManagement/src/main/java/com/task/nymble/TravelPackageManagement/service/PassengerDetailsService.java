@@ -12,6 +12,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
+/**
+ * Service class with business logic for passenger details
+ * 
+ * @author Shruti
+ * @version 1.0
+ */
+
 @Service
 public class PassengerDetailsService {
     @Autowired
@@ -40,6 +47,14 @@ public class PassengerDetailsService {
     public List<Passenger> getAllPassengerDetails() {
         return passengerRepository.findAll();
     }
+
+    /**
+     * @param passengerNumber
+     * @return List of activities booked by the passenger, and passenger
+     *         details(name, passengerNumber, balance)
+     * @throws EntityNotFoundException
+     * 
+     */
 
     public Map<String, Object> getPassengerActivityBookingDetails(Long passengerNumber) {
         Passenger passenger = passengerRepository.findById(passengerNumber)

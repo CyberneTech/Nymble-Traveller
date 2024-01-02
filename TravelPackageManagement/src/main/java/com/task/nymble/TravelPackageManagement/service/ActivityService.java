@@ -7,6 +7,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/***
+ * Service class with business logic for Activities
+ * saveActivity, updateActivity, getActivity, getAllAvailableActivities for CRUD
+ * operations
+ * 
+ */
+
 @Service
 public class ActivityService {
     @Autowired

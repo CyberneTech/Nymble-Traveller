@@ -10,6 +10,12 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import java.util.List;
 
+/**
+ * Entity to represents an activity in a travel package.
+ * Each activity is associated with a specific destination (many-to-one relation with destination)
+ * one-to-many relaiton with activity booking
+ */
+
 @Entity
 @Table(name = "activities")
 @JsonIdentityInfo(
@@ -30,10 +36,12 @@ public class Activity {
     @Column(nullable = false)
     private Integer capacity;
 
+    //(foreign-key) of destinations table
     @ManyToOne
     @JoinColumn(name = "destination_Id")
     private Destination destination;
 
+    // Bidirectional mapping with activity_booking
     @JsonIgnore
     @OneToMany(mappedBy = "activity")
     private List<ActivityBooking> activityBookingList;

@@ -12,6 +12,12 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents a destination in the travel package.
+ * one-to-many relation with activities
+ * many-to-many relation with travelpackage
+ */
+
 @Entity
 @Table(name="destinations")
 @JsonIdentityInfo(
@@ -28,10 +34,13 @@ public class Destination {
 
     private String destinationName;
 
+    // bidirectional mapping with activity.
+    // orphan removal = true as child(activity) should not exist without parent destination
     @JsonIgnore
     @OneToMany(mappedBy = "destination", cascade = CascadeType.PERSIST, orphanRemoval = true)
     private  List<Activity> activities;
 
+    // bidirectional mapping with travelpackage
     @JsonIgnore
     @ManyToMany(mappedBy = "destinations")
     private List<TravelPackage> travelPackages;

@@ -19,6 +19,12 @@ import java.util.List;
 import java.util.LinkedHashMap;
 
 
+/**
+ * Service class with business logic for travel package details
+ * saveTravelPackage(), updateTravelPackage(), getTravelPackage(),
+ * getAllTravelPackages() for CRUD operations
+ */
+
 @Service
 public class TravelPackageService {
 
@@ -52,6 +58,14 @@ public class TravelPackageService {
         return packages;
     }
 
+    /**
+     * Method to get the travel package itinerary, includes package_name, list of
+     * destinations, and list of activities
+     * 
+     * @param packageId
+     * @return Map<String, Object> with travel package details
+     */
+
     public Map<String, Object> getTravelPackageItinerary(Long packageId) {
         TravelPackage travelPackage = travelPackageRepository.findById(packageId)
                 .orElseThrow(() -> new EntityNotFoundException("TravelPackage not found"));
@@ -81,6 +95,14 @@ public class TravelPackageService {
         return itineraryMap;
     }
 
+    /**
+     * Method to get the travel package passenger list, includes package_name, list
+     * of passengers enrolled
+     * 
+     * @param packageId
+     * @return Map<String, Object> with travel package passenger list details
+     */
+
     public Map<String, Object> getTravelPackagePassengerList(Long packageId) {
         TravelPackage travelPackage = travelPackageRepository.findById(packageId)
                 .orElseThrow(() -> new EntityNotFoundException("TravelPackage not found"));
@@ -101,6 +123,15 @@ public class TravelPackageService {
         passengerListMap.put("passengers", passengers);
         return passengerListMap;
     }
+
+    /**
+     * Method to book a travel package,
+     * 
+     * @param travelPackageId
+     * @param passengerNumber
+     * @return String with booking status
+     * 
+     */
 
     @Transactional
     public String bookTravelPackageService(Long travelPackageId, Long passengerNumber){

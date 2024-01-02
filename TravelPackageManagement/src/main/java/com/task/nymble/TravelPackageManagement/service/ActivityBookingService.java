@@ -12,6 +12,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * Class with business logic for ActivityBooking
+ * bookActivity - method for booking activity
+ * getAllActivityBookings - method for getting all activity bookings
+ */
 
 @Service
 public class ActivityBookingService {
@@ -27,6 +32,14 @@ public class ActivityBookingService {
     public List<ActivityBooking>  getAllActivityBookings() {
         return activityBookingRepository.findAll();
     }
+
+    /**
+     * @param activityName    - name of activity
+     * @param passengerNumber - passenger number
+     * @throws IllegalStateException - if passenger or activity not found or
+     *                               capacity reached
+     *                               ACID compliant
+     */
 
     @Transactional
     public void bookActivity(String activityName, Long passengerNumber){

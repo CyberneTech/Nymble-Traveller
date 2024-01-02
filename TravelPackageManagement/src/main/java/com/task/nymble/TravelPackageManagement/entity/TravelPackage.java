@@ -12,6 +12,11 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents travel packages in the application.
+ * A travel package can have multiple destinations and enrolled passengers.
+ * creates -> table("travelpackage")  and another JOIN table("package_destinations") with Destinations
+ */
 
 @Entity
 @Table(name="travelpackage")
@@ -37,6 +42,7 @@ public class TravelPackage {
     //counter for the number for passengers enrolled
     private Integer totalEnrollments = 0;
 
+    //bidirectional mapping from passenger
     @JsonIgnore
     @ManyToMany(mappedBy = "travelPackages")
     private List<Passenger> passengers = new ArrayList<>();

@@ -8,7 +8,11 @@ The system can interact with client side apps through standard HTTP methods. The
 
 
 ## UML Class Diagram
-![LLD Diagram](images/LLD.png)
+![LLD_entities Diagram](images/LLD.png)
+ diagram above shows the basic UML class diagram for the application. Contains the application entities and their relationships with each other.
+ 
+![LLD_for services Diagram](images/Service_UML.png)
+ UML class diagram for the application Services. Contains the application services and the interface they implement. Highlighted methods are the ones that were mentioned explicitly in the requirement document.
 
 ### Installation
 

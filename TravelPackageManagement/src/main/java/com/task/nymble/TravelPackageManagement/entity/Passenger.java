@@ -13,6 +13,12 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents passengers data. List of users on the application
+ * A passenger can book multiple activities and enroll in various travel packages.
+ * creates -> table("passenger_details)  and another JOIN table("package_booking") with TravelPackages
+ */
+
 @Entity
 @Table(name = "passenger_details")
 @JsonIdentityInfo(
@@ -38,6 +44,7 @@ public class Passenger {
     @OneToMany(mappedBy = "passenger")
     private List<ActivityBooking> activityBookings;
 
+    //created a JOIN table package_booking
     @JsonIgnore
     @ManyToMany
     @JoinTable(

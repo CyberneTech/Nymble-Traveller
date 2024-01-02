@@ -7,6 +7,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Service class with business logic for Destination entity
+ * addDestination(), getAllDestinations() methods for creating, getting
+ * destinations
+ * 
+ */
+
 @Service
 public class DestinationService {
 
